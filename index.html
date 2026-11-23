@@ -2,78 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JAJC NextGen Corp | Careers & Admin Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>JAJC NextGen Corp | Interview Form & Admin</title>
   <style>
     :root {
       --primary: #2563eb;
-      --primary-dark: #1d4ed8;
       --bg: #0f172a;
       --card: #1e293b;
       --text: #f8fafc;
       --muted: #94a3b8;
       --border: #334155;
       --accent: #10b981;
-      --danger: #ef4444;
+      --danger: #f87171;
     }
 
     * {
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      padding: 20px;
+      padding: 14px;
       line-height: 1.5;
     }
 
     .container {
-      max-width: 880px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 24px 28px;
       background: linear-gradient(135deg, #1e293b, #0f172a);
       border: 1px solid var(--border);
       border-radius: 16px;
-      margin-bottom: 24px;
+      padding: 20px;
+      margin-bottom: 18px;
+      text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #60a5fa;
     }
 
     header p {
-      margin: 4px 0 0;
+      margin: 4px 0 14px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .nav-btns {
       display: flex;
       gap: 10px;
+      justify-content: center;
     }
 
     .nav-btn {
+      flex: 1;
+      max-width: 170px;
       background: #334155;
       color: #f8fafc;
       border: 1px solid #475569;
-      padding: 10px 16px;
+      padding: 12px;
       border-radius: 10px;
       cursor: pointer;
       font-weight: 600;
-      transition: 0.2s;
+      font-size: 0.95rem;
     }
 
     .nav-btn.active {
@@ -85,9 +83,8 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
     .top-bar {
@@ -96,62 +93,48 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 14px;
+      padding-bottom: 12px;
     }
 
     .top-bar h2 {
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
-    .demo-btn {
+    .btn-sm {
       background: #334155;
       color: #e2e8f0;
       border: 1px solid #475569;
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .demo-btn:hover {
-      background: #475569;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    @media (max-width: 650px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      font-size: 0.85rem;
+      font-weight: 600;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     label {
       font-weight: 600;
       margin-bottom: 6px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #cbd5e1;
     }
 
     input, select, textarea {
+      width: 100%;
       background: #0f172a;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 12px;
+      padding: 13px;
       color: var(--text);
-      font-size: 0.95rem;
+      font-size: 16px;
       outline: none;
     }
 
@@ -161,7 +144,7 @@
 
     textarea {
       resize: vertical;
-      min-height: 90px;
+      min-height: 85px;
     }
 
     .username-wrap {
@@ -180,7 +163,6 @@
 
     .username-wrap input {
       border: none;
-      width: 100%;
     }
 
     .submit-btn {
@@ -188,42 +170,20 @@
       background: var(--primary);
       color: white;
       border: none;
-      padding: 14px;
+      padding: 15px;
       border-radius: 10px;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
-    .submit-btn:hover {
-      background: var(--primary-dark);
+    .submit-btn:disabled {
+      opacity: 0.6;
     }
 
     .hidden {
       display: none;
-    }
-
-    .admin-controls {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .admin-controls input {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .danger-btn {
-      background: rgba(239, 68, 68, 0.15);
-      color: #f87171;
-      border: 1px solid #ef4444;
-      padding: 10px 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
     }
 
     .applicant-card {
@@ -231,8 +191,8 @@
       border: 1px solid var(--border);
       border-left: 4px solid var(--accent);
       border-radius: 12px;
-      padding: 18px;
-      margin-top: 14px;
+      padding: 15px;
+      margin-top: 12px;
     }
 
     .applicant-header {
@@ -240,8 +200,8 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 8px;
     }
 
     .badge {
@@ -249,14 +209,15 @@
       color: var(--accent);
       padding: 4px 10px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
     }
 
     .detail-row {
-      margin: 6px 0;
-      font-size: 0.93rem;
+      margin: 5px 0;
+      font-size: 0.9rem;
       color: #cbd5e1;
+      word-break: break-word;
     }
 
     .detail-row strong {
@@ -268,9 +229,18 @@
       border-radius: 10px;
       background: rgba(16, 185, 129, 0.15);
       color: #34d399;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-weight: 600;
       text-align: center;
+    }
+
+    .err-msg {
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--danger);
+      text-align: center;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -278,72 +248,64 @@
 
   <div class="container">
     <header>
-      <div>
-        <h1>JAJC NextGen Corp</h1>
-        <p>Jain & Jha Corporation • Official Interview Portal</p>
-      </div>
+      <h1>JAJC NextGen Corp</h1>
+      <p>Jain & Jha Corporation • Global Interview Portal</p>
       <div class="nav-btns">
         <button id="tabApply" class="nav-btn active" onclick="showTab('apply')">Apply Now</button>
-        <button id="tabAdmin" class="nav-btn" onclick="showTab('admin')">🔒 Admin Panel</button>
+        <button id="tabAdmin" class="nav-btn" onclick="showTab('admin')">🔒 Admin Check</button>
       </div>
     </header>
 
-    <!-- PUBLIC APPLICATION FORM -->
+    <!-- INTERVIEW APPLICATION FORM -->
     <div id="applySection" class="card">
       <div class="top-bar">
-        <h2>Interview Application Form</h2>
-        <button type="button" class="demo-btn" onclick="fillDemoData()">
-          ✨ Fill Sample Applicant
-        </button>
+        <h2>Interview Form</h2>
+        <button type="button" class="btn-sm" onclick="fillDemoData()">✨ Fill Sample</button>
       </div>
 
       <div id="successBanner" class="status-msg hidden">
-        ✅ Your application has been sent to JAJC NextGen Corp Admins!
+        ✅ Submitted! Open Admin Check to see it in the list.
       </div>
 
       <form id="interviewForm">
-        <div class="grid">
-          <div class="form-group">
-            <label for="fullName">Full Name *</label>
-            <input type="text" id="fullName" placeholder="Enter your full name" required />
-          </div>
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" placeholder="Enter your full name" required />
+        </div>
 
-          <div class="form-group">
-            <label for="username">Username *</label>
-            <div class="username-wrap">
-              <span>@</span>
-              <input type="text" id="username" placeholder="choose_a_username" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" placeholder="e.g., +91 98765 43210" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" placeholder="you@example.com" required />
+        <div class="form-group">
+          <label for="username">Username *</label>
+          <div class="username-wrap">
+            <span>@</span>
+            <input type="text" id="username" placeholder="choose_a_username" required />
           </div>
         </div>
 
-        <div class="grid">
-          <div class="form-group">
-            <label for="position">Position You Want *</label>
-            <select id="position" required>
-              <option value="">-- Select a Position --</option>
-              <option value="Web Developer">Web Developer (Web Making)</option>
-              <option value="Game Developer">Game Developer (Game Making)</option>
-              <option value="Advisor & Consultant">Advisor & Student Consultant</option>
-              <option value="Helping & Support Lead">Helping & Support Lead</option>
-              <option value="Finance & Loans Coordinator">Finance & Loans Coordinator</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="e.g., +91 98765 43210" required />
+        </div>
 
-          <div class="form-group">
-            <label for="skills">Your Skills *</label>
-            <input type="text" id="skills" placeholder="e.g., HTML, Scratch, Roblox, Math, Teamwork" required />
-          </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position You Want *</label>
+          <select id="position" required>
+            <option value="">-- Select a Position --</option>
+            <option value="Web Developer">Web Developer (Web Making)</option>
+            <option value="Game Developer">Game Developer (Game Making)</option>
+            <option value="Advisor & Consultant">Advisor & Student Consultant</option>
+            <option value="Helping & Support Lead">Helping & Support Lead</option>
+            <option value="Finance & Loans Coordinator">Finance & Loans Coordinator</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Your Skills *</label>
+          <input type="text" id="skills" placeholder="e.g., HTML, Scratch, Roblox, Math" required />
         </div>
 
         <div class="form-group">
@@ -352,91 +314,78 @@
         </div>
 
         <div class="form-group">
-          <label for="benefits">What Benefits Do You Expect After Joining? *</label>
-          <textarea id="benefits" placeholder="e.g., Learning coding, leadership role, teamwork..." required></textarea>
+          <label for="benefits">Benefits You Expect After Joining? *</label>
+          <textarea id="benefits" placeholder="e.g., Learning coding, leadership, teamwork..." required></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Submit Interview Application</button>
+        <button type="submit" id="submitBtn" class="submit-btn">Submit Application</button>
       </form>
     </div>
 
-    <!-- ADMIN LOGIN BOX -->
+    <!-- ADMIN LOGIN -->
     <div id="adminLoginSection" class="card hidden">
       <div class="top-bar">
-        <h2>🔒 Admin Login — JAJC NextGen Corp</h2>
+        <h2>🔒 Admin Login</h2>
       </div>
       <form id="adminLoginForm">
-        <div class="grid">
-          <div class="form-group">
-            <label for="adminUser">Admin Username</label>
-            <input type="text" id="adminUser" placeholder="Enter admin username" required />
-          </div>
-          <div class="form-group">
-            <label for="adminPass">Admin Password</label>
-            <input type="password" id="adminPass" placeholder="Enter admin password" required />
-          </div>
+        <div class="form-group">
+          <label for="adminUser">Admin Username</label>
+          <input type="text" id="adminUser" placeholder="jajc_admin" required />
         </div>
-        <button type="submit" class="submit-btn">Unlock Admin Dashboard</button>
+        <div class="form-group">
+          <label for="adminPass">Admin Password</label>
+          <input type="password" id="adminPass" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="submit-btn">Unlock Submissions</button>
       </form>
     </div>
 
-    <!-- ADMIN DASHBOARD (ONLY VISIBLE AFTER LOGIN) -->
+    <!-- ADMIN VIEWER -->
     <div id="adminDashboard" class="card hidden">
       <div class="top-bar">
-        <h2>Admin Dashboard • Total Applicants: <span id="count">0</span></h2>
-        <button class="demo-btn" onclick="logoutAdmin()">Log Out</button>
+        <h2>Submissions (<span id="count">0</span>)</h2>
+        <div style="display:flex; gap:8px;">
+          <button class="btn-sm" onclick="loadSubmissions()">🔄 Refresh</button>
+          <button class="btn-sm" onclick="logoutAdmin()">Log Out</button>
+        </div>
       </div>
 
-      <div class="admin-controls">
+      <div class="form-group">
         <input
           type="text"
           id="searchBox"
-          placeholder="🔍 Search by name, @username, or position to check who applied..."
-          oninput="renderApplications()"
+          placeholder="🔍 Search name, @username, or position..."
+          oninput="renderFiltered()"
         />
-        <button class="danger-btn" onclick="clearAllApplications()">Clear All</button>
       </div>
 
-      <div id="applicationsList"></div>
+      <div id="applicationsList">
+        <p style="color:#94a3b8; text-align:center;">Checking submissions...</p>
+      </div>
     </div>
   </div>
 
   <script>
-    // ==========================================
-    // ADMIN CREDENTIALS (You can edit these!)
-    // ==========================================
+    // ========================================================
+    // PASTE YOUR FIREBASE DATABASE LINK BELOW (No slash at end)
+    // Example: "https://jajc-corp-default-rtdb.firebaseio.com"
+    // ========================================================
+    const FIREBASE_URL = "PASTE_YOUR_FIREBASE_LINK_HERE";
+
+    // ADMIN CREDENTIALS
     const ADMIN_USERNAME = "jajc_admin";
     const ADMIN_PASSWORD = "jajc2026";
-    // ==========================================
+    // ========================================================
 
     let isAdminLoggedIn = false;
+    let allApps = [];
 
-    // Default sample applicant if storage is empty
-    const defaultData = [
-      {
-        name: "Aarav Sharma",
-        username: "aarav_dev",
-        phone: "+91 98765 43210",
-        email: "aarav.sharma@schoolmail.com",
-        position: "Game Developer",
-        skills: "Scratch, Python Basics, Game Design",
-        whyPosition: "I love building mini-games and want to help JAJC NextGen Corp create games for students.",
-        benefits: "Working with a creative team and improving my coding skills.",
-        submittedAt: "Sample Entry"
+    function getCleanUrl() {
+      const url = FIREBASE_URL.trim().replace(/\/$/, "");
+      if (!url || url.includes("PASTE_YOUR")) {
+        return null;
       }
-    ];
-
-    function getApplications() {
-      const saved = localStorage.getItem("jajc_applications");
-      if (!saved) {
-        localStorage.setItem("jajc_applications", JSON.stringify(defaultData));
-        return defaultData;
-      }
-      return JSON.parse(saved);
-    }
-
-    function saveApplications(apps) {
-      localStorage.setItem("jajc_applications", JSON.stringify(apps));
+      return url;
     }
 
     function showTab(tab) {
@@ -460,7 +409,7 @@
         if (isAdminLoggedIn) {
           loginSec.classList.add("hidden");
           dashSec.classList.remove("hidden");
-          renderApplications();
+          loadSubmissions();
         } else {
           loginSec.classList.remove("hidden");
           dashSec.classList.add("hidden");
@@ -468,7 +417,6 @@
       }
     }
 
-    // Handle Admin Login
     document.getElementById("adminLoginForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const user = document.getElementById("adminUser").value.trim();
@@ -488,23 +436,31 @@
       showTab("apply");
     }
 
-    // Fill Sample Applicant
     function fillDemoData() {
-      document.getElementById("fullName").value = "Riya Verma";
-      document.getElementById("username").value = "riya_web";
-      document.getElementById("phone").value = "+91 91234 56789";
-      document.getElementById("email").value = "riya.verma@schoolmail.com";
-      document.getElementById("position").value = "Web Developer";
-      document.getElementById("skills").value = "HTML, CSS, Canva Design, Communication";
-      document.getElementById("whyPosition").value = "I enjoy designing clean websites and want to build pages for JAJC NextGen Corp.";
-      document.getElementById("benefits").value = "Hands-on web project experience and teamwork skills.";
+      document.getElementById("fullName").value = "Aarav Patel";
+      document.getElementById("username").value = "aarav_jajc";
+      document.getElementById("phone").value = "+91 98765 43210";
+      document.getElementById("email").value = "aarav.patel@example.com";
+      document.getElementById("position").value = "Game Developer";
+      document.getElementById("skills").value = "HTML, Game Design, Problem Solving";
+      document.getElementById("whyPosition").value = "Excited to build games and websites with JAJC NextGen Corp.";
+      document.getElementById("benefits").value = "Teamwork, coding practice, and growing the startup.";
     }
 
-    // Handle New Application Submission
-    document.getElementById("interviewForm").addEventListener("submit", function (e) {
+    document.getElementById("interviewForm").addEventListener("submit", async function (e) {
       e.preventDefault();
+      const baseUrl = getCleanUrl();
 
-      const newApp = {
+      if (!baseUrl) {
+        alert("⚠️ FIREBASE_URL is not set yet! Paste your Firebase database link inside the code first.");
+        return;
+      }
+
+      const btn = document.getElementById("submitBtn");
+      btn.disabled = true;
+      btn.textContent = "Submitting...";
+
+      const payload = {
         name: document.getElementById("fullName").value.trim(),
         username: document.getElementById("username").value.trim().replace(/^@/, ""),
         phone: document.getElementById("phone").value.trim(),
@@ -516,32 +472,69 @@
         submittedAt: new Date().toLocaleString()
       };
 
-      const apps = getApplications();
-      apps.unshift(newApp);
-      saveApplications(apps);
+      try {
+        const res = await fetch(`${baseUrl}/applications.json`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
 
-      document.getElementById("interviewForm").reset();
-      const banner = document.getElementById("successBanner");
-      banner.classList.remove("hidden");
-      setTimeout(() => banner.classList.add("hidden"), 4000);
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+
+        document.getElementById("interviewForm").reset();
+        const banner = document.getElementById("successBanner");
+        banner.classList.remove("hidden");
+        setTimeout(() => banner.classList.add("hidden"), 5000);
+      } catch (err) {
+        alert("❌ Could not submit. Check your FIREBASE_URL and ensure Firebase Realtime Database is in Test Mode.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Submit Application";
+      }
     });
 
-    // Render Applications inside Admin Dashboard
-    function renderApplications() {
-      const apps = getApplications();
+    async function loadSubmissions() {
+      const list = document.getElementById("applicationsList");
+      const baseUrl = getCleanUrl();
+
+      if (!baseUrl) {
+        list.innerHTML = `<div class="err-msg">⚠️ FIREBASE_URL is missing! Paste your Firebase link in the code so submissions can sync globally.</div>`;
+        document.getElementById("count").textContent = "0";
+        return;
+      }
+
+      list.innerHTML = `<p style="color:#94a3b8; text-align:center;">⏳ Loading submissions from Firebase...</p>`;
+
+      try {
+        const res = await fetch(`${baseUrl}/applications.json`);
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+
+        const data = await res.json();
+        allApps = data ? Object.values(data).reverse() : [];
+        renderFiltered();
+      } catch (err) {
+        list.innerHTML = `<div class="err-msg">❌ Failed to read submissions. Check the FIREBASE_URL link and Firebase Test Mode rules.</div>`;
+      }
+    }
+
+    function renderFiltered() {
       const query = document.getElementById("searchBox").value.toLowerCase().trim();
       const list = document.getElementById("applicationsList");
-      document.getElementById("count").textContent = apps.length;
+      document.getElementById("count").textContent = allApps.length;
 
-      const filtered = apps.filter(
+      const filtered = allApps.filter(
         (app) =>
-          app.name.toLowerCase().includes(query) ||
-          app.username.toLowerCase().includes(query) ||
-          app.position.toLowerCase().includes(query)
+          String(app.name || "").toLowerCase().includes(query) ||
+          String(app.username || "").toLowerCase().includes(query) ||
+          String(app.position || "").toLowerCase().includes(query)
       );
 
       if (filtered.length === 0) {
-        list.innerHTML = `<p style="color:#94a3b8; text-align:center;">No matching applications found.</p>`;
+        list.innerHTML = `<p style="color:#94a3b8; text-align:center;">No submissions found yet.</p>`;
         return;
       }
 
@@ -557,20 +550,13 @@
             </div>
             <div class="detail-row"><strong>Phone:</strong> ${app.phone} | <strong>Email:</strong> ${app.email}</div>
             <div class="detail-row"><strong>Skills:</strong> ${app.skills}</div>
-            <div class="detail-row"><strong>Why this position:</strong> ${app.whyPosition}</div>
-            <div class="detail-row"><strong>Expected benefits:</strong> ${app.benefits}</div>
-            <div class="detail-row" style="font-size:0.8rem; color:#64748b;"><strong>Applied on:</strong> ${app.submittedAt}</div>
+            <div class="detail-row"><strong>Why:</strong> ${app.whyPosition}</div>
+            <div class="detail-row"><strong>Benefits:</strong> ${app.benefits}</div>
+            <div class="detail-row" style="font-size:0.8rem; color:#64748b;"><strong>Time:</strong> ${app.submittedAt || "N/A"}</div>
           </div>
         `
         )
         .join("");
-    }
-
-    function clearAllApplications() {
-      if (confirm("Are you sure you want to delete all saved applications?")) {
-        saveApplications([]);
-        renderApplications();
-      }
     }
   </script>
 </body>
